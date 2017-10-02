@@ -1,6 +1,7 @@
 $(document).ready(function () {
 
     var DEBUG = false;
+    var DEBUG = true;
 
     var infoContentIndex = 1;
     var infoContentList = [
@@ -71,8 +72,8 @@ $(document).ready(function () {
         {
             timing: 3000,
             title: '위치기반 커뮤니티',
-            content: 'ANIMEAL은 반려동물을 위한 올바른 사료 구매를 유도할 뿐\n' +
-                '만 아니라, 다양한 모임 참여를 통해 반려인과 반려동물의 \n' +
+            content: 'ANIMEAL은 반려동물을 위한 올바른 사료 구매를 유도할\n' +
+                '뿐만 아니라, 다양한 모임 참여를 통해 반려인과 반려동물의 \n' +
                 '유대관계 형성을 유도합니다.\n' +
                 '다양한 반려동물 모임은 물론, GPS기반으로 근처 동물병원과\n' +
                 '애견카페의 정보를 알 수 있습니다. \n' +
@@ -250,8 +251,32 @@ $(document).ready(function () {
             }
         ).next(
             function () {
+                $('.category-container .category-item:nth-child(8)').addClass('select');
+            }, function () {
+                return 2000;
+            }
+        ).next(
+            function () {
+                $('.category-container .category-item:nth-child(8)').removeClass('select');
+            }, function () {
+                return 2000;
+            }
+        ).next(
+            function () {
+                $('.category-container .category-item:nth-child(4)').addClass('select');
+            }, function () {
+                return 2000;
+            }
+        ).next(
+            function () {
+                $('.category-container .category-item:nth-child(4)').removeClass('select');
+            }, function () {
+                return 2000;
+            }
+        ).next(
+            function () {
                 var body = $('html, body');
-                body.stop().animate({ scrollTop: 3192 }, 10000);
+                body.stop().animate({ scrollTop: 3192 }, 2000);
             }, function () {
                 return 1500;
             }
