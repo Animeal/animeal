@@ -299,7 +299,12 @@ header .right-area .menu-area .menu-wrap.select {
   font-size: 20px;
   height: 30px;
 }
-.body-container .intro-container .left-area .content-wrap .content > img {
+.body-container .intro-container .left-area .content-wrap .content > div {
+  display: block;
+  height: 21px;
+  background-size: cover;
+}
+.body-container .intro-container .left-area .content-wrap .content > img.playStore {
   margin-top: 8px;
 }
 .body-container .intro-container .left-area .content-wrap span {

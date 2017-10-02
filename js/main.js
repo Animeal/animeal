@@ -1,38 +1,37 @@
 $(document).ready(function () {
 
-    var DEBUG = false;
     var DEBUG = true;
 
     var infoContentIndex = 1;
     var infoContentList = [
-        [
-            'It\'s very important that',
-            'considering companion',
-            'animal\'s feed by status, but',
-            'it is hard to find what is the',
-            'proper feed.'
-        ],
-        [
-            '\'Animeal\' helps you to choose',
-            'more resonable food for your',
-            'companion animal in irreverent',
-            'advertisments. And also make',
-            'growth about your knowledge',
-            'of feeds.'
-        ],
-        [
-            '\'Animeal\' encourages you to',
-            'buy more proper feeds for',
-            'companion animals and helps',
-            'them to build ties with others',
-            'by participate various',
-            'meetings.'
-        ],
-        [
-            'Find out your pet’s meal with',
-            'more clever ways.',
-            '<img src="image/button-playstore.png">'
-        ]
+        {
+            width: 274,
+            top: -20,
+            src: 'image/intro/text1.png',
+            count: 5,
+            isPlayStore: false
+        },
+        {
+            width: 275,
+            top: -30,
+            src: 'image/intro/text2.png',
+            count: 6,
+            isPlayStore: false
+        },
+        {
+            width: 274,
+            top: -30,
+            src: 'image/intro/text3.png',
+            count: 6,
+            isPlayStore: false
+        },
+        {
+            width: 273,
+            top: -10,
+            src: 'image/intro/text4.png',
+            count: 2,
+            isPlayStore: true
+        }
     ];
 
     var aboutContentIndex = 0;
@@ -118,9 +117,21 @@ $(document).ready(function () {
         var index = parseInt($('.intro-container .pagination-wrap .first > span.curr').text());
         var body = $('.intro-container .content-wrap');
         var data = infoContentList[index];
-        data.forEach(function (value) {
-            body.append('<span class="content">' + value + '</span>');
-        });
+        for (var i = 0; i < data.count; ++ i) {
+            body.append(
+                '<span class="content">' +
+                '   <div style="width: ' + data.width + 'px;background-image: url(' + data.src + '); background-position: 0 -' + (i * 30).toString() + 'px"></div>' +
+                '</span>'
+            );
+        }
+        if (data.isPlayStore) {
+            body.append(
+                '<span class="content">' +
+                '   <img src="image/button-playstore.png">' +
+                '</span>'
+            )
+        }
+        body.css('margin-top', data.top.toString() + 'px');
     }
     function resetInfoContent() {
         infoContentIndex = 1;
