@@ -173,8 +173,6 @@ header {
   left: 0;
   top: 0;
   z-index: 1000;
-  background: url(../image/bg-top-dot.png) repeat-x;
-  background-size: auto 192px;
 }
 header > div {
   display: inline-block;
@@ -367,12 +365,30 @@ header .right-area .menu-area .menu-wrap.select {
 .body-container .intro-container .right-area .right-wrap.page4 img:nth-child(4) {
   top: 0;
 }
-.body-container .intro-container > img {
+.body-container .intro-container > img.top-dot {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 192px;
+  transition: all 0.35s;
+}
+.body-container .intro-container > img.top-dot.page3 {
+  opacity: 0.333333;
+}
+.body-container .intro-container > img.top-dot.page4 {
+  opacity: 0.333333;
+}
+.body-container .intro-container > img.bottom-dot {
   position: absolute;
   top: 508px;
   left: 0;
   width: 100%;
   height: 192px;
+  transition: all 0.35s;
+}
+.body-container .intro-container > img.bottom-dot.page4 {
+  opacity: 0.666666;
 }
 .body-container .about-container {
   position: relative;

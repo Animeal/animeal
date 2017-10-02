@@ -151,8 +151,6 @@ header {
   left: 0;
   top: 0;
   z-index: 1000;
-  background: url(../image/bg-top-dot.png) repeat-x;
-  background-size: auto 192px;
 
   >div {
     display: inline-block;
@@ -351,12 +349,32 @@ header {
         }
       }
     }
-    >img {
+    >img.top-dot {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 192px;
+      transition: all 0.35s;
+
+      &.page3 {
+        opacity: 0.333333;
+      }
+      &.page4 {
+        opacity: 0.333333;
+      }
+    }
+    >img.bottom-dot {
       position: absolute;
       top: 508px;
       left: 0;
       width: 100%;
       height: 192px;
+      transition: all 0.35s;
+
+      &.page4 {
+        opacity: 0.666666;
+      }
     }
   }
   .about-container {

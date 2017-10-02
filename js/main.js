@@ -141,6 +141,7 @@ $(document).ready(function () {
         reloadInfoContent();
         $('.intro-container .content-wrap > span').addClass('show');
         $('.intro-container .right-wrap').removeClass('page4').addClass('page1');
+        $('.intro-container > img').removeClass('page4').addClass('page1');
     }
     window.resetInfoContent = resetInfoContent;
 
@@ -162,15 +163,17 @@ $(document).ready(function () {
     }
     function nextInfoImage() {
         var wrap = $('.intro-container .right-wrap');
+        var img = $('.intro-container > img');
+
         if (wrap.hasClass('page1')) {
-            wrap.removeClass('page1');
-            wrap.addClass('page2');
+            wrap.removeClass('page1').addClass('page2');
+            img.removeClass('page1').addClass('page2');
         } else if (wrap.hasClass('page2')) {
-            wrap.removeClass('page2');
-            wrap.addClass('page3');
+            wrap.removeClass('page2').addClass('page3');
+            img.removeClass('page2').addClass('page3');
         } else if (wrap.hasClass('page3')) {
-            wrap.removeClass('page3');
-            wrap.addClass('page4');
+            wrap.removeClass('page3').addClass('page4');
+            img.removeClass('page3').addClass('page4');
         }
     }
 
