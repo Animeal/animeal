@@ -503,6 +503,7 @@ $(document).ready(function () {
             function () {
                 $('.about-container .phone-area').addClass('show');
                 animation(function () {
+                    $('video')[0].currentTime = 0;
                     $('video')[0].play();
                 }, function () {
                     return 500;
